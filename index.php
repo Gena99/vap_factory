@@ -8,5 +8,11 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
-?>
+$select = 'SELECT * from vap_factory.produits';
+$rows = $db->query($select);
+$produit = $rows->fetchAll();
+var_dump($produit);
+
+$create ="INSERT INTO `vap_factory`.`produits` (`Reference`, `Nom`, `Description`, `Prix_achat_unitaire`, `Prix_vente_unitaire`) VALUES ('10', 'blabla', 'pfff', '8', '0')";
+$db->exec($create);
 
